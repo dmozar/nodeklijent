@@ -1,34 +1,24 @@
-'use strict';
-// import controllers
-let User = require('./controllers/user');
-let Activity = require('./controllers/activity');
 
-// export route generating function
-module.exports = app => {
+// Set up the express app
+const routes = require('express').Router();
 
-  // "Hello, World!" route
-  app.route('/').get((req, res) => {
-    res.json({
-      message: `This is the ${process.env.APP} REST API`
-    });
-  });
 
-  app.route('/users')
-    .get(User.getAll)
-    .post(User.create);
+import user_controller from './app/controller/user_controller';
 
-  app.route('/users/:id')
-    .get(User.getOne)
-    .post(User.update)
-    .delete(User.delete);
 
-  app.route('/activities')
-    .get(Activity.getAll)
-    .post(Activity.create);
 
-  app.route('/activities/:id')
-    .get(Activity.getOne)
-    .post(Activity.update)
-    .delete(Activity.delete);
 
-};
+routes.route('/user/find')
+.get(user_controller.find)
+.post(user_controller.insert)
+.delete(user_controller.delete)
+.put(user_controller.update);
+
+
+    
+
+
+
+
+
+module.exports = routes;

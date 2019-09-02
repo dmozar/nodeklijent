@@ -1,53 +1,40 @@
 {
-  "name": "rest-api-skeleton",
+  "name": "restapi",
   "version": "1.0.0",
-  "description": "A REST API skeleton based on NodeJS, Express, MongoDB, Mongoose using JSON Web Tokens (JWT).",
-  "main": "index.js",
+  "description": "Search Rest Api",
+  "main": "app.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha",
-    "watch": "nyc mocha --watch",
-    "start": "nodemon index.js",
-    "cover": "nyc --reporter=html --reporter=text mocha"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/nodemon app.js --exec babel-node --"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/morphatic/rest-api-skeleton.git"
+    "url": "git+https://github.com/dmozar/SearchRestApi.git"
   },
   "keywords": [
-    "REST",
-    "API",
-    "Express",
-    "MongoDB",
-    "Mongoose",
-    "TDD",
-    "JWT",
-    "Auth0"
+    "rest",
+    "api",
+    "search"
   ],
-  "author": "Morgan Benton <morgan@morphatic.com> (http://morphatic.com)",
-  "license": "MIT",
+  "author": "Damir Mozar",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/morphatic/rest-api-skeleton/issues"
+    "url": "https://github.com/dmozar/SearchRestApi/issues"
   },
-  "homepage": "https://github.com/morphatic/rest-api-skeleton#readme",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "dotenv": "^4.0.0",
-    "express": "^4.15.2",
-    "express-jwt": "^5.1.0",
-    "mongoose": "^4.9.2"
-  },
+  "homepage": "https://github.com/dmozar/SearchRestApi#readme",
   "devDependencies": {
-    "async": "^2.3.0",
-    "chai": "^3.5.0",
-    "chalk": "^1.1.3",
-    "coveralls": "^2.13.0",
-    "faker": "^4.1.0",
-    "jsonwebtoken": "^7.3.0",
-    "lodash": "^4.17.4",
-    "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
-    "nyc": "^10.2.0",
-    "randomstring": "^1.1.5",
-    "supertest": "^3.0.0"
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mysql": "^2.17.1"
   }
 }
